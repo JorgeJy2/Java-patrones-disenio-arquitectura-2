@@ -64,3 +64,4 @@ public class PrototypeDemo {
         System.out.println("\n✓ Demo completado - Prototype permite clonar objetos eficientemente");
     }
 }
+

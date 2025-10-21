@@ -18,3 +18,4 @@ public class FabricaWindows extends FabricaGUI {
         return new CampoTextoWindows(placeholder, ancho);
     }
 }
+

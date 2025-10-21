@@ -54,3 +54,4 @@ public abstract class CampoTexto {
         this.ancho = ancho;
     }
 }
+

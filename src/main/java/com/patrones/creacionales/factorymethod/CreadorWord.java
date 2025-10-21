@@ -12,3 +12,4 @@ public class CreadorWord extends CreadorDocumento {
         return new DocumentoWord(titulo);
     }
 }
+

@@ -42,11 +42,48 @@ Proporcionar ejemplos simples y comprensibles de cada patrón, enfocándose en l
 
 ### Requisitos
 - Java 11 o superior
-- Maven 3.6 o superior
+- Maven 3.6 o superior (opcional)
 
-### Compilar el proyecto
+### Opción 1: Usando Maven (Recomendado)
+
+#### Compilar el proyecto
 ```bash
 mvn compile
+```
+
+### Opción 2: Compilación Individual sin Maven
+
+#### Compilar cada patrón individualmente
+```bash
+# Crear directorio de clases si no existe
+mkdir -p target/classes
+
+# Singleton
+javac -d target/classes src/main/java/com/patrones/creacionales/singleton/*.java
+
+# Factory Method
+javac -d target/classes src/main/java/com/patrones/creacionales/factorymethod/*.java
+
+# Prototype
+javac -d target/classes src/main/java/com/patrones/creacionales/prototype/*.java
+
+# Abstract Factory
+javac -d target/classes src/main/java/com/patrones/creacionales/abstractfactory/*.java
+
+# Builder
+javac -d target/classes src/main/java/com/patrones/creacionales/builder/*.java
+
+# Main (ejecuta todos los ejemplos)
+javac -d target/classes src/main/java/com/patrones/creacionales/Main.java
+```
+
+#### Compilar todo de una vez
+```bash
+# Crear directorio de clases
+mkdir -p target/classes
+
+# Compilar todos los archivos Java
+javac -d target/classes src/main/java/com/patrones/creacionales/**/*.java
 ```
 
 ### Ejecutar ejemplos individuales
@@ -82,6 +119,98 @@ chmod +x ejecutar-ejemplos.sh
 ### Ejecutar todos los ejemplos
 ```bash
 java -cp target/classes com.patrones.creacionales.Main
+```
+
+## 🔧 Compilación y Ejecución sin Maven
+
+### Proceso Completo sin Maven
+
+#### 1. Preparar el entorno
+```bash
+# Crear directorio de clases
+mkdir -p target/classes
+```
+
+#### 2. Compilar todos los archivos
+```bash
+# Opción A: Compilar todos los archivos Java de una vez (Linux/Mac)
+javac -d target/classes src/main/java/com/patrones/creacionales/**/*.java
+
+# Opción B: Compilar cada patrón individualmente (Windows/Linux/Mac)
+javac -d target/classes src/main/java/com/patrones/creacionales/singleton/*.java
+javac -d target/classes src/main/java/com/patrones/creacionales/factorymethod/*.java
+javac -d target/classes src/main/java/com/patrones/creacionales/prototype/*.java
+javac -d target/classes src/main/java/com/patrones/creacionales/abstractfactory/*.java
+javac -d target/classes src/main/java/com/patrones/creacionales/builder/*.java
+javac -d target/classes src/main/java/com/patrones/creacionales/Main.java
+
+# Opción C: Si hay problemas de codificación, usar UTF-8
+javac -encoding UTF-8 -d target/classes src/main/java/com/patrones/creacionales/singleton/*.java
+javac -encoding UTF-8 -d target/classes src/main/java/com/patrones/creacionales/factorymethod/*.java
+javac -encoding UTF-8 -d target/classes src/main/java/com/patrones/creacionales/prototype/*.java
+javac -encoding UTF-8 -d target/classes src/main/java/com/patrones/creacionales/abstractfactory/*.java
+javac -encoding UTF-8 -d target/classes src/main/java/com/patrones/creacionales/builder/*.java
+javac -encoding UTF-8 -d target/classes src/main/java/com/patrones/creacionales/Main.java
+```
+
+#### 3. Ejecutar ejemplos individuales
+```bash
+# Singleton
+java -cp target/classes com.patrones.creacionales.singleton.SingletonDemo
+
+# Factory Method  
+java -cp target/classes com.patrones.creacionales.factorymethod.FactoryMethodDemo
+
+# Prototype
+java -cp target/classes com.patrones.creacionales.prototype.PrototypeDemo
+
+# Abstract Factory
+java -cp target/classes com.patrones.creacionales.abstractfactory.AbstractFactoryDemo
+
+# Builder
+java -cp target/classes com.patrones.creacionales.builder.BuilderDemo
+```
+
+#### 4. Ejecutar todos los ejemplos
+```bash
+java -cp target/classes com.patrones.creacionales.Main
+```
+
+### Scripts de Compilación sin Maven
+
+#### Windows (compilar-sin-maven.bat)
+```batch
+@echo off
+echo Compilando proyecto sin Maven...
+mkdir target\classes 2>nul
+javac -d target\classes src\main\java\com\patrones\creacionales\**\*.java
+if %ERRORLEVEL% equ 0 (
+    echo Compilacion exitosa!
+    echo.
+    echo Ejecutando todos los ejemplos...
+    java -cp target\classes com.patrones.creacionales.Main
+) else (
+    echo Error en la compilacion
+)
+pause
+```
+
+#### Linux/Mac (compilar-sin-maven.sh)
+```bash
+#!/bin/bash
+echo "Compilando proyecto sin Maven..."
+mkdir -p target/classes
+javac -d target/classes src/main/java/com/patrones/creacionales/**/*.java
+
+if [ $? -eq 0 ]; then
+    echo "Compilación exitosa!"
+    echo
+    echo "Ejecutando todos los ejemplos..."
+    java -cp target/classes com.patrones.creacionales.Main
+else
+    echo "Error en la compilación"
+    exit 1
+fi
 ```
 
 ## 📁 Estructura del Proyecto

@@ -18,3 +18,4 @@ public class FabricaMac extends FabricaGUI {
         return new CampoTextoMac(placeholder, ancho);
     }
 }
+

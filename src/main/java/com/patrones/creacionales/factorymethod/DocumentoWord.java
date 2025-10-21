@@ -18,3 +18,4 @@ public class DocumentoWord extends Documento {
         this.contenido = "Contenido procesado en formato Word";
     }
 }
+

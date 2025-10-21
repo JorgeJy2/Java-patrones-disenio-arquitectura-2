@@ -14,3 +14,4 @@ public class CampoTextoWindows extends CampoTexto {
         System.out.println("🪟 Renderizando campo Windows: '" + placeholder + "' (ancho: " + ancho + ")");
     }
 }
+

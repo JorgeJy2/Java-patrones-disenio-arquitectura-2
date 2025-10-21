@@ -15,3 +15,4 @@ public class BotonWindows extends Boton {
         System.out.println("🪟 Renderizando botón Windows: '" + texto + "' con estilo " + color);
     }
 }
+

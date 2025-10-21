@@ -41,3 +41,4 @@ public abstract class FabricaGUI {
         System.out.println("\n✅ Interfaz lista para usar\n");
     }
 }
+

@@ -39,3 +39,4 @@ public class SingletonDemo {
         System.out.println("\n✓ Demo completado - Solo existe una instancia de Configuracion");
     }
 }
+

@@ -22,6 +22,7 @@ public class Rectangulo extends Forma {
     @Override
     public Rectangulo clone() {
         Rectangulo rectanguloClonado = (Rectangulo) super.clone();
+        
         // El ancho y alto se copian automáticamente (son primitivos)
         return rectanguloClonado;
     }
@@ -43,3 +44,4 @@ public class Rectangulo extends Forma {
         this.alto = alto;
     }
 }
+

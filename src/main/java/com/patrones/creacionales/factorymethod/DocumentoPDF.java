@@ -18,3 +18,4 @@ public class DocumentoPDF extends Documento {
         this.contenido = "Contenido procesado en formato PDF";
     }
 }
+

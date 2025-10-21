@@ -14,3 +14,4 @@ public class CampoTextoMac extends CampoTexto {
         System.out.println("🍎 Renderizando campo Mac: '" + placeholder + "' (ancho: " + ancho + ")");
     }
 }
+

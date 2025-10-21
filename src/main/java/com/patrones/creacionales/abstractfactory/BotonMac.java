@@ -15,3 +15,4 @@ public class BotonMac extends Boton {
         System.out.println("🍎 Renderizando botón Mac: '" + texto + "' con estilo " + color);
     }
 }
+

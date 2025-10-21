@@ -1,5 +1,7 @@
 package com.patrones.creacionales.prototype;
 
+import java.util.ArrayList;
+
 /**
  * PATRÓN PROTOTYPE
  * 
@@ -40,6 +42,13 @@ public abstract class Forma implements Cloneable {
         try {
             Forma formaClonada = (Forma) super.clone();
             // Si hubiera objetos complejos, aquí se haría deep copy
+            // Ejemplo deep copy
+            // copia.paginas = new ArrayList<>();
+            // for (Pagina p : this.paginas) {
+            //     copia.paginas.add(new Pagina(p)); // Constructor copia de Pagina
+            // }
+            // return copia;
+
             return formaClonada;
         } catch (CloneNotSupportedException e) {
             throw new RuntimeException("Error al clonar la forma", e);
@@ -88,3 +97,4 @@ public abstract class Forma implements Cloneable {
         return y;
     }
 }
+

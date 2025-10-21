@@ -38,3 +38,4 @@ public abstract class CreadorDocumento {
         return documento;
     }
 }
+

@@ -38,6 +38,14 @@ Proporcionar ejemplos simples y comprensibles de cada patrón, enfocándose en l
 - **Ejemplo**: Sistema de construcción de pizzas
 - **Archivos**: `PizzaBuilder.java`, `Pizza.java`, `Cocinero.java`, `BuilderDemo.java`
 
+## 🏗️ Patrones Estructurales
+
+### 6. **Adapter** - Adaptador
+- **Propósito**: Permite que objetos con interfaces incompatibles trabajen juntos
+- **Cuándo usar**: Integrar sistemas de terceros, reutilizar código existente
+- **Ejemplo**: Sistema de motores (común, económico, eléctrico)
+- **Archivos**: `Motor.java`, `MotorElectrico.java`, `MotorElectricoAdapter.java`, `AdapterDemo.java`
+
 ## 🚀 Cómo Ejecutar
 
 ### Requisitos
@@ -104,6 +112,9 @@ java -cp target/classes com.patrones.creacionales.abstractfactory.AbstractFactor
 
 # Builder
 java -cp target/classes com.patrones.creacionales.builder.BuilderDemo
+
+# Adapter (Patrón Estructural)
+java -cp target/classes com.patrones.creacionales.adapter.AdapterDemo
 ```
 
 #### Usando scripts interactivos
@@ -247,6 +258,14 @@ src/main/java/com/patrones/creacionales/
 │   ├── PizzaPepperoniBuilder.java
 │   ├── Cocinero.java
 │   └── BuilderDemo.java
+├── adapter/
+│   ├── Motor.java
+│   ├── MotorComun.java
+│   ├── MotorEconomico.java
+│   ├── MotorElectrico.java
+│   ├── MotorElectricoAdapter.java
+│   ├── Aplicacion.java
+│   └── AdapterDemo.java
 └── Main.java
 ```
 

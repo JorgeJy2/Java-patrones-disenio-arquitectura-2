@@ -39,10 +39,14 @@ public class Configuracion {
      * Método estático para obtener la instancia única
      * Implementa lazy initialization (se crea solo cuando se necesita)
      */
-    public static Configuracion getInstancia() {
+    public static synchronized Configuracion getInstancia() {
+
         if (instancia == null) {
             instancia = new Configuracion();
         }
+
+        System.out.println("Se llamó a instancia!");
+
         return instancia;
     }
     

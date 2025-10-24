@@ -9,6 +9,9 @@ package com.patrones.creacionales.prototype;
  * 3. Permite personalizar las copias según sea necesario
  */
 public class PrototypeDemo {
+
+   
+
     
     public static void main(String[] args) {
         System.out.println("=== DEMO PATRÓN PROTOTYPE ===\n");

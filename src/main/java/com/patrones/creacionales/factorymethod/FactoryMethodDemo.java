@@ -29,7 +29,18 @@ public class FactoryMethodDemo {
         procesarDocumentos(creadorPDF, "Reporte Técnico");
         procesarDocumentos(creadorWord, "Presentación Ejecutiva");
         
+
+        System.out.println("1. Creando documento PDF:");
+        CreadorDocumento creadorPDF2 = new CreadorPDF();
+
+
+
         System.out.println("✓ Demo completado - Factory Method permite crear objetos sin conocer sus clases específicas");
+
+
+
+         System.out.println("1. Creando documento PDF:");
+        CreadorDocumento creadorPDF3 = new CreadorPDF();
     }
     
     /**
@@ -42,4 +53,6 @@ public class FactoryMethodDemo {
         doc.mostrarInfo();
     }
 }
+
+
 

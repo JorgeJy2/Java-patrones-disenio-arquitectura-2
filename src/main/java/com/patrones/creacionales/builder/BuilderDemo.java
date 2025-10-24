@@ -1,58 +1,96 @@
 package com.patrones.creacionales.builder;
 
 /**
- * DEMO del patrón Builder
+ * DEMO del patrón Builder - Construcción de Casas
  * 
- * Este ejemplo demuestra que:
- * 1. Se pueden construir objetos complejos paso a paso
- * 2. Es fácil crear diferentes variaciones del mismo objeto
- * 3. El código es más legible y mantenible
- * 4. Se pueden omitir parámetros opcionales
+ * PROBLEMA RESUELTO:
+ * 1. Constructor telescópico con muchos parámetros opcionales
+ * 2. Dificultad para crear diferentes variaciones
+ * 3. Código difícil de leer y mantener
+ * 4. Parámetros innecesarios en la mayoría de casos
+ * 
+ * SOLUCIÓN CON BUILDER:
+ * 1. Construcción paso a paso
+ * 2. Diferentes builders para diferentes tipos
+ * 3. Código más legible y mantenible
+ * 4. Parámetros opcionales manejados correctamente
  */
 public class BuilderDemo {
     
     public static void main(String[] args) {
-        System.out.println("=== DEMO PATRÓN BUILDER ===\n");
+        System.out.println("=== DEMO PATRÓN BUILDER - CONSTRUCCIÓN DE CASAS ===\n");
         
-        // Crear el director (cocinero)
-        Cocinero cocinero = new Cocinero();
+        // DEMOSTRAR EL PROBLEMA
+        demostrarProblema();
         
-        // Construir pizza hawaiana básica
-        System.out.println("1. Construyendo Pizza Hawaiana Básica:");
-        PizzaHawaianaBuilder hawaianaBuilder = new PizzaHawaianaBuilder();
-        cocinero.setPizzaBuilder(hawaianaBuilder);
-        cocinero.construirPizzaBasica();
-        Pizza pizzaHawaiana = cocinero.obtenerPizza();
-        pizzaHawaiana.mostrarPizza();
+        // DEMOSTRAR LA SOLUCIÓN
+        demostrarSolucion();
+    }
+    
+    /**
+     * Demuestra el problema del constructor telescópico
+     */
+    private static void demostrarProblema() {
+        System.out.println("=== PROBLEMA: CONSTRUCTOR TELESCÓPICO ===\n");
         
-        // Construir pizza pepperoni premium
-        System.out.println("2. Construyendo Pizza Pepperoni Premium:");
-        PizzaPepperoniBuilder pepperoniBuilder = new PizzaPepperoniBuilder();
-        cocinero.setPizzaBuilder(pepperoniBuilder);
-        cocinero.construirPizzaPremium();
-        Pizza pizzaPepperoni = cocinero.obtenerPizza();
-        pizzaPepperoni.mostrarPizza();
+        // PROBLEMA: Constructor con muchos parámetros
+        System.out.println("1. Casa básica (muchos parámetros innecesarios):");
+        Casa casaBasica = new Casa("Ladrillo", "Cemento", 4, "Madera", "Teja", 
+                                 false, false, false, false, false, false, null, 0, null);
+        casaBasica.mostrarCasa();
         
-        // Construir pizza personalizada
-        System.out.println("3. Construyendo Pizza Hawaiana Personalizada:");
-        cocinero.setPizzaBuilder(hawaianaBuilder);
-        cocinero.construirPizzaPersonalizada("Mediana");
-        Pizza pizzaPersonalizada = cocinero.obtenerPizza();
-        pizzaPersonalizada.mostrarPizza();
+        System.out.println("\n2. Casa de lujo (constructor muy largo):");
+        Casa casaLujo = new Casa("Mármol", "Parquet", 8, "Cristal", "Pizarra", 
+                               true, true, true, true, true, true, "Elegante", 5, "Moderno");
+        casaLujo.mostrarCasa();
         
-        // Demostrar construcción manual (sin director)
-        System.out.println("4. Construcción manual de pizza:");
-        PizzaBuilder builderManual = new PizzaHawaianaBuilder();
-        builderManual.crearNuevaPizza();
-        builderManual.construirMasa();
-        builderManual.construirSalsa();
-        builderManual.construirIngredientes();
-        builderManual.agregarQuesoExtra();
-        builderManual.establecerTamaño("Familiar");
-        Pizza pizzaManual = builderManual.obtenerPizza();
-        pizzaManual.mostrarPizza();
+        System.out.println("\n=== PROBLEMAS IDENTIFICADOS ===");
+        System.out.println("❌ Constructor telescópico con muchos parámetros");
+        System.out.println("❌ Parámetros innecesarios en la mayoría de casos");
+        System.out.println("❌ Código difícil de leer y mantener");
+        System.out.println("❌ Difícil crear nuevas variaciones");
+        System.out.println("❌ Fácil cometer errores al pasar parámetros");
+    }
+    
+    /**
+     * Demuestra la solución con Builder
+     */
+    private static void demostrarSolucion() {
+        System.out.println("\n=== SOLUCIÓN: PATRÓN BUILDER ===\n");
         
-        System.out.println("✓ Demo completado - Builder permite construir objetos complejos paso a paso");
+        // Crear el director (constructor)
+        Constructor constructor = new Constructor();
+        
+        // Construir casa simple
+        System.out.println("1. Construyendo Casa Simple:");
+        CasaSimpleBuilder casaSimpleBuilder = new CasaSimpleBuilder();
+        constructor.setCasaBuilder(casaSimpleBuilder);
+        constructor.construirCasaBasica();
+        Casa casaSimple = constructor.obtenerCasa();
+        casaSimple.mostrarCasa();
+        
+        // Construir casa de lujo
+        System.out.println("\n2. Construyendo Casa de Lujo:");
+        CasaLujosaBuilder casaLujosaBuilder = new CasaLujosaBuilder();
+        constructor.setCasaBuilder(casaLujosaBuilder);
+        constructor.construirCasaLujo();
+        Casa casaLujosa = constructor.obtenerCasa();
+        casaLujosa.mostrarCasa();
+        
+        // Construir casa completa
+        System.out.println("\n3. Construyendo Casa Completa:");
+        constructor.setCasaBuilder(casaLujosaBuilder);
+        constructor.construirCasaCompleta();
+        Casa casaCompleta = constructor.obtenerCasa();
+        casaCompleta.mostrarCasa();
+        
+        System.out.println("\n=== VENTAJAS DE LA SOLUCIÓN ===");
+        System.out.println("✅ Construcción paso a paso");
+        System.out.println("✅ Diferentes builders para diferentes tipos");
+        System.out.println("✅ Código más legible y mantenible");
+        System.out.println("✅ Parámetros opcionales manejados correctamente");
+        System.out.println("✅ Fácil crear nuevas variaciones");
+        System.out.println("✅ Menos propenso a errores");
     }
 }
 
